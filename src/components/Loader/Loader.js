@@ -5,8 +5,8 @@ export const Loader = () => {
   return (
     <Backdrop>
       <Oval
-        height={80}
-        width={80}
+        height={100}
+        width={100}
         color="#686868"
         wrapperStyle={{}}
         wrapperClass=""
