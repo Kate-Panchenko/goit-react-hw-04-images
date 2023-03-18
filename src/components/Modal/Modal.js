@@ -5,17 +5,12 @@ import { useEffect } from 'react';
 const modalRoot = document.querySelector('#modal-root');
 
 export const Modal = ({ largeImage, alt, onClose }) => {
-  //   componentDidMount() {
-  //     document.addEventListener('keydown', this.handleKeydown);
-  //   }
-
-  //   componentWillUnmount() {
-  //     document.removeEventListener('keydown', this.handleKeydown);
-  //   }
-
-  // useEffect(() => {
-
-  // }, [])
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeydown);
+    return () => {
+      window.removeEventListener('keydown', handleKeydown);
+    };
+  });
 
   const handleKeydown = evt => {
     if (evt.key === 'Escape') {

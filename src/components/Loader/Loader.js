@@ -1,23 +1,21 @@
 import { Oval } from 'react-loader-spinner';
+import { Backdrop } from './Loader.styled';
 
 export const Loader = () => {
   return (
-    <Oval
-      height={80}
-      width={80}
-      color="#686868"
-      wrapperStyle={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 40,
-      }}
-      wrapperClass=""
-      visible={true}
-      ariaLabel="oval-loading"
-      secondaryColor="#DBDBDB"
-      strokeWidth={2}
-      strokeWidthSecondary={2}
-    />
+    <Backdrop>
+      <Oval
+        height={80}
+        width={80}
+        color="#686868"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+        ariaLabel="oval-loading"
+        secondaryColor="#DBDBDB"
+        strokeWidth={2}
+        strokeWidthSecondary={2}
+      />
+    </Backdrop>
   );
 };

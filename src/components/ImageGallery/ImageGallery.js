@@ -1,22 +1,20 @@
-import { Gallery, GalleryImage, GalleryWrapper } from './ImageGallery.styled';
+import { Gallery, GalleryImage } from './ImageGallery.styled';
 import { GalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 import PropTypes from 'prop-types';
 
-export const ImageGallery = ({ images }) => {
+export const ImageGallery = ({ images, alt }) => {
   return (
     <Gallery>
-      {images.map(({ id, webformatURL, largeImageURL, searchValue }) => {
+      {images.map(({ id, webformatURL, largeImageURL }) => {
         return (
-          <GalleryWrapper>
-            <GalleryImage key={id}>
-              <GalleryItem
-                webImage={webformatURL}
-                largeImage={largeImageURL}
-                id={id}
-                searchValue={searchValue}
-              />
-            </GalleryImage>
-          </GalleryWrapper>
+          <GalleryImage key={id}>
+            <GalleryItem
+              webImage={webformatURL}
+              largeImage={largeImageURL}
+              id={id}
+              alt={alt}
+            />
+          </GalleryImage>
         );
       })}
     </Gallery>
@@ -24,12 +22,12 @@ export const ImageGallery = ({ images }) => {
 };
 
 ImageGallery.propTypes = {
+  alt: PropTypes.string,
   images: PropTypes.arrayOf(
     PropTypes.shape({
       webformatURL: PropTypes.string.isRequired,
       largeImageURL: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
-      searchValue: PropTypes.string.isRequired,
     })
   ),
 };
