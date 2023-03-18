@@ -24,7 +24,6 @@ export const App = () => {
   useEffect(() => {
     function onRenderGallery(query, page) {
       setShowLoader(true);
-      setShowButton(false);
       getImages(query, page).then(({ hits, total, totalHits }) => {
       setShowLoader(false);
 
